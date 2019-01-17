@@ -26,4 +26,24 @@ router.get('/', function(req, res, next) {
 
 });
 
+router.get('/search', function(req,res){
+  res.render('search')})
+
+router.post('/search/movie',(req,res)=>{
+// submitted data from forms comes in the request object
+// querystring data=> is in req.query
+// posed data=> is in req.body
+
+  const movieTitle= req.body.movieTitle;
+  // res.json(req.body)
+  const searchUrl=`${apiBaseUrl}/search/movie?query=${movieTitle}&api_key=${apiKey}`
+  request.get(searchUrl, (error, response, body)=>{
+    const parsedData = JSON.parse(body);
+    res.render('now_playing',{
+      imageBaseUrl,
+      parsedData: parsedData.results
+    })
+  })
+})  
+
 module.exports = router;
