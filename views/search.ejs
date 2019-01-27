@@ -1,8 +1,11 @@
-<!-- in form, action = Where to submit the form (url)
-method = what type of http request (get, post, put, etc.) -->
-        <!-- in a post request, data is passed through the body -->
-<form action ="/search/movie" method="post">
-    <!-- on an input box, "name" attribute is what the variable will be called on submission -->
-    <input type="text" name="movieTitle" placeholder="Search for a movie here">
-    <input type="submit" class="btn btn-primary" value="Meow!">
+<!-- in form, action = Where to submit the form (url) -->
+<!-- method = What type of http request (get, post, put, etc.) -->
+
+<!-- a get request will pass all data through the URL -->
+<!-- a post request will pass all data through the http body -->
+<form action="/search/movie" method="post">
+    <!-- on an input box, "name" attribute is what the variable -->
+    <!-- will be called, on submission -->
+    <input type="text" name="movieTitle" placeholder="Enter your movie search here" />
+    <input type="submit" class="btn btn-primary" value="Arf!" />
 </form>
